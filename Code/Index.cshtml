@@ -1,0 +1,105 @@
+﻿@model IEnumerable<JobPlacementDashboard.Models.JPApplication>
+
+<div class="container ml-0 mr-0 JPA">
+
+    <div class="col-sm-12">
+        <h3>&nbsp;&nbsp;Application Information</h3>
+
+        <p><br /> <br /><br /></p>
+
+
+
+
+        @using (Html.BeginForm())
+        {
+            <p>
+                <div id="SearchContainer">
+                    <div class="row">
+                        <div class="col-md-12" >
+                            <div id="custom-search-input">
+                                <div class="input-group col-md-12">
+                                    <input type="search" placeholder="Search" name="SearchString" class="form-control input-lg search-box-border" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-info btn-lg">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </p>
+        }
+
+
+        <table class="table">
+            <tr class="text-center">
+                <th class="text-left JPAName">
+                    @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm })
+                </th>
+                <th class="text-center JPACompany">
+                    @Html.ActionLink("Company", "Index", new { sortOrder = ViewBag.CompanySortParm })
+                </th>
+                <th class="text-center JPAJobTitle">
+                    @Html.ActionLink("Job Title", "Index", new { sortOrder = ViewBag.JobTitleSortParm })
+                </th>
+                <th class="text-center JPACategory">
+                    @Html.ActionLink("Job Category", "Index", new { sortOrder = ViewBag.JobCategorySortParm })
+                </th>
+                <th class="text-center JPALocation">
+                    @Html.ActionLink("Location", "Index", new { sortOrder = ViewBag.CompanyCitySortParm })
+                </th>
+                <th class="text-center JPAApplicationDate">
+                    @Html.ActionLink("Application Date", "Index", new { sortOrder = ViewBag.ApplicationDateSortParm })
+                </th>
+                <th class="text-center JPAInterview">
+                    @Html.ActionLink("Interview", "Index", new { sortOrder = ViewBag.InterviewSortParm })
+                </th>
+                <th class="text-center JPAHeard">
+                    @Html.ActionLink("Heard Back", "Index", new { sortOrder = ViewBag.HeardBackSortParm })
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+            <tr class="text-center">
+                <td class="text-left JPATName">
+                    @Html.DisplayFor(modelItem => item.ApplicationUser.FirstName)
+                </td>
+                <td class="text-center JPATCompany">
+                    @Html.DisplayFor(modelItem => item.JPCompanyName)
+                </td>
+                <td class="text-center JPATJobTitle">
+                    @Html.DisplayFor(modelItem => item.JPJobTitle)
+                </td>
+                <td class="text-center JPATCategory">
+                    @Html.DisplayFor(modelItem => item.JPJobCategory).ToString().Replace("_", " ")
+                </td>
+                <td class="text-center JPATLocation">
+                    @Html.DisplayFor(modelItem => item.JPCompanyCity),
+                    @Html.DisplayFor(modelItem => item.JPCompanyState).ToString().Replace("_", " ")
+                </td>
+                <td class="text-center JPATApplicationDate">
+                    @item.JPApplicationDate.ToShortDateString()
+                </td>
+                <td class="text-center JPATInterview">
+                    @Html.DisplayFor(modelItem => item.Interview)
+                </td>
+                <td class="text-center JPATHeard">
+                    @Html.DisplayFor(modelItem => item.HeardBack)
+                </td>
+                <td class="text-center font20 JPATIcon" style="padding-right: 0px; padding-left: 0px; padding-top: 5px; padding-bottom: 0px; width: 60px;">
+                    @Html.ActionLink(HttpUtility.HtmlDecode("&#x270E;"), "Edit", new { id = item.JPAppId }) |
+                    @Html.ActionLink(HttpUtility.HtmlDecode("&#x1F5D1;"), "Delete", new { id = item.JPAppId })
+                </td>
+            </tr>
+            }
+
+        </table>
+    </div>
+</div>
+
+
+<br />
