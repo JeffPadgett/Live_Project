@@ -9,3 +9,5 @@ For my final project at The Tech Academy, I worked with a development team of my
 - [Add Sorting and Filtering to Button and implimenting testable data](#https://github.com/JeffPadgett/Live_Project/blob/master/Images/Capture.JPG)
 - [Used SQL queries to create testable database information and change data.](#https://github.com/JeffPadgett/Live_Project/blob/master/Images/Capture.JPG)
 - Make sure that the create methods on the controller redirects the user to the details page.
+- Implement C# using Razor syntax to create user generated forms.
+
