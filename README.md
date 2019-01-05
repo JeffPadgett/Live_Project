@@ -11,3 +11,6 @@ For my final project at The Tech Academy, I worked with a development team of my
 - Make sure that the create methods on the controller redirects the user to the details page.
 - Implement C# using Razor syntax to create user generated forms.
 
+## Front End Stories
+- Adjusted interface for mobile first using media query breakpoints. 
+
