@@ -13,4 +13,6 @@ For my final project at The Tech Academy, I worked with a development team of my
 
 ## Front End Stories
 - Adjusted interface for mobile first using media query breakpoints. 
+- Add synchronized icons for deletions and instantiations of forms. 
+
 
